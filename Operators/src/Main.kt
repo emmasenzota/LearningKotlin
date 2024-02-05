@@ -2,6 +2,7 @@ fun main() {
     testStrings();
     testOps()
     testCompare()
+    testnull()
 }
 
 fun testStrings(){
@@ -46,4 +47,16 @@ fun testCompare(){
         }
     }
 
+}
+
+fun testnull(){
+    val checknull :Int? = null // this is how one declare null value
+    val checknonNull : Int = 6;
+
+    //Elvis operator ?:
+    val newDecrementOnNull = checknull?.dec() ?:0
+    println("On Null $newDecrementOnNull")
+
+    val newDecrementNonNull = checknonNull?.dec() ?: 0
+    println("On non null $newDecrementNonNull ")
 }
