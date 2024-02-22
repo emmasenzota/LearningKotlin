@@ -3,6 +3,7 @@ fun main() {
     testOps()
     testCompare()
     testnull()
+    ArrayLists()
 }
 
 fun testStrings(){
@@ -59,4 +60,68 @@ fun testnull(){
 
     val newDecrementNonNull = checknonNull?.dec() ?: 0
     println("On non null $newDecrementNonNull ")
+}
+
+/*
+* @methode arrayLists
+*
+* learn declaration and how to manipulate
+*
+* new Lists
+*  */
+fun ArrayLists(){
+//    declare a list
+    val school = mutableListOf("Themi","meru","uhuru","kaloleni")
+    println(school)
+
+//    dealing with Arrays NB:- arrays are not mutable
+//    Rules for val and var are the same as for Lists
+    val secSchool = arrayOf("Moshi","zanaki","Umbwe")
+
+//    combine arrays
+    val priSchools = arrayOf("daraja 2","Themi","Meru")
+    val combine = secSchool + priSchools
+    println(java.util.Arrays.toString(combine))
+
+//    Nested arrays and Lists
+    val numbers = intArrayOf(1,4,8,9)
+    val countries = listOf("Tanzania","Kenya","DRC","Burundi")
+//    val oddList = listOf(numbers,countries,"very oddd",1.2) // hard to read contents cz java.util.Arrays.toString expect intArray
+
+//     loops
+    for(element in countries){
+        print(element + " ")
+    }
+
+    for ((index,element) in countries.withIndex()){
+        println("Item of $index is $element")
+    }
+
+//    dynamic allocation
+//    for(i in 1..10) print(i)
+//
+//    for(i in 8 downTo 1) print(i)
+//
+//    for(i in 2..8 step 4) print(i)
+//
+//    for (i in 'c'..'h') print(i)
+
+//    while() and do...while()
+    var itarator = 0
+
+    while(itarator < 10){
+        itarator++
+    }
+    println("itarate $itarator times ")
+
+    do{
+        itarator--
+    }while (itarator > 9)
+
+    println("itarate $itarator times in do..while")
+
+    repeat(2){
+        println(java.util.Arrays.toString(secSchool))
+    }
+
 }
